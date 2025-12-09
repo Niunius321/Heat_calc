@@ -116,7 +116,7 @@
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
       <NoEntryPoint>false</NoEntryPoint>
-      <AdditionalDependencies>"C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\JDLL.lib";"C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\CDLL.lib";$(CoreLibraryDependencies);%(AdditionalDependencies);C:\SFML-3.0.2\lib\sfml-graphics.lib;C:\SFML-3.0.2\lib\sfml-window.lib;C:\SFML-3.0.2\lib\sfml-system.lib</AdditionalDependencies>
+      <AdditionalDependencies>"C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\JDLL.lib";"C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\CDLL.lib";$(CoreLibraryDependencies);%(AdditionalDependencies);C:\SFML-3.0.2\lib\sfml-graphics.lib;C:\SFML-3.0.2\lib\sfml-window.lib;C:\SFML-3.0.2\lib\sfml-system.lib;"C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\GPUDLL.lib"</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\SFML-3.0.2\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="map.bin" />
+    <None Include="map40k.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,5 @@
 .data
-    rozmiar          dq 100     ; Zmienna przechowuj¹ca liczbê wierszy
+    rozmiar          dq 20000     ; Zmienna przechowuj¹ca liczbê wierszy
     alpha            dq 0.1, 0.1     ; Zmienna przechowuj¹ca liczbê alpha
     time             dq 0.01, 0.01    ; Zmienna przechowuj¹ca liczbê dt
     four             dq 4.0,4.0 ;

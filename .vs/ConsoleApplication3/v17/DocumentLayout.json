@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{191A635E-573C-471D-9FF5-5C577D96EE0A}|ConsoleApplication3\\ConsoleApplication3.vcxproj|C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\ConsoleApplication3\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{191A635E-573C-471D-9FF5-5C577D96EE0A}|ConsoleApplication3\\ConsoleApplication3.vcxproj|solutionrelative:ConsoleApplication3\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A634CF99-658D-4592-BBF0-51A06A1F1364}|JDLL\\JDLL.vcxproj|C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\JDLL\\heat.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A634CF99-658D-4592-BBF0-51A06A1F1364}|JDLL\\JDLL.vcxproj|solutionrelative:JDLL\\heat.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}|GPUDLL\\GPUDLL.vcxproj|C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\GPUDLL\\gpu.cu||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}|GPUDLL\\GPUDLL.vcxproj|solutionrelative:GPUDLL\\gpu.cu||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}|CDLL\\CDLL.vcxproj|C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\CDLL\\dllheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}|CDLL\\CDLL.vcxproj|solutionrelative:CDLL\\dllheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dllheat.cpp",
+              "DocumentMoniker": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\CDLL\\dllheat.cpp",
+              "RelativeDocumentMoniker": "CDLL\\dllheat.cpp",
+              "ToolTip": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\CDLL\\dllheat.cpp",
+              "RelativeToolTip": "CDLL\\dllheat.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-08T20:06:02.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "heat.asm",
+              "DocumentMoniker": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\JDLL\\heat.asm",
+              "RelativeDocumentMoniker": "JDLL\\heat.asm",
+              "ToolTip": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\JDLL\\heat.asm",
+              "RelativeToolTip": "JDLL\\heat.asm",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-08T19:56:26.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "gpu.cu",
+              "DocumentMoniker": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\GPUDLL\\gpu.cu",
+              "RelativeDocumentMoniker": "GPUDLL\\gpu.cu",
+              "ToolTip": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\GPUDLL\\gpu.cu",
+              "RelativeToolTip": "GPUDLL\\gpu.cu",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-07T20:42:43.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\ConsoleApplication3\\main.cpp",
+              "RelativeDocumentMoniker": "ConsoleApplication3\\main.cpp",
+              "ToolTip": "C:\\Users\\sarim\\OneDrive\\Pulpit\\Heat_calc (1)\\Heat_calc\\Heat_Calculation (2)\\Heat_Calculation\\Heat_Calculation\\ConsoleApplication3\\main.cpp",
+              "RelativeToolTip": "ConsoleApplication3\\main.cpp",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAN8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T22:21:51.678Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

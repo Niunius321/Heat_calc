@@ -1,7 +1,7 @@
 #include "pch.h"
 #include <iostream>
-const int liczba_wierszy = 100;
-const int liczba_kolumn = 100;
+const int liczba_wierszy = 20000;
+const int liczba_kolumn = 20000;
 const double alpha = 0.1;
 const double dt = 0.01;
 const double delta = 1.0;

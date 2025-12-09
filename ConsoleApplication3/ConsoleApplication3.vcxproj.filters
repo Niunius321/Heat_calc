@@ -20,5 +20,8 @@
     <None Include="map.bin">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="map40k.bin">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

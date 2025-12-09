@@ -9,17 +9,22 @@
 #include <SFML/Graphics.hpp>
 #include <optional>
 #include <cstdint>
+#include <Windows.h>
 
 
 // Sta³e dla rozmiaru mapy
-const int liczba_wierszy = 100;
-const int liczba_kolumn = 100;
+const int liczba_wierszy = 20000;
+const int liczba_kolumn = 20000;
 const double alpha = 0.1;
 const double dt = 0.01;
 const double delta = 1.0;
 const double four = 4.0;
 // Deklaracja funkcji assemblerowej
 extern "C" void calculate_heat(double* map, double* map_new, int start_row, int end_row);
+extern "C" void Calculate_heat_GPU(int rows, int cols);
+extern "C" void Init_GPU(double* map, int rows, int cols);
+extern "C" void CopyBack_GPU(double* map_new, int rows, int cols);
+extern "C" void Free_GPU();
 extern "C" __declspec(dllexport) void Calculate_heat(double* map, double* map_new, int start_row, int end_row);
 
 typedef void (*CalculationFunction)(double*, double*, int, int);
@@ -143,67 +148,82 @@ void showHeatmapSFML(const std::vector<double>& map, int rows, int cols, int win
 }
 
 int main() {
-    int i = 5;
-    // Inicjalizacja mapy
-    std::vector<double> map(liczba_wierszy * liczba_kolumn);  // 1D vector mimicking 2D
-    std::vector<double> map_new(liczba_wierszy * liczba_kolumn);  // 1D vector mimicking 2D
+    int rows = liczba_wierszy;
+    int cols = liczba_kolumn;
 
-    // Za³aduj dane z pliku do map
-    
-    load_binary_map("map.bin", map, 100, 100);
-    
-    std::cout << map.size();
-    std::cout << "pobrano mape";
-    //load_map_from_file("mapa.txt", map);
-    void* func = nullptr;
+    std::vector<double> map(rows * cols);
+    std::vector<double> map_new(rows * cols);
+
+    load_binary_map("map40k.bin", map, rows, cols);
+
     char choice;
-    std::cout << "Select calculation method (C for C++, A for ASM): ";
+    std::cout << "Select calculation method: (C=CPU, A=ASM, G=GPU): ";
     std::cin >> choice;
+
+    bool useGPU = false;
     CalculationFunction calculation_func = nullptr;
-    if (choice == 'a') {
-        calculation_func = calculate_heat;  // Wybór funkcji assemblerowej
+
+    if (choice == 'A' || choice == 'a') {
+        calculation_func = calculate_heat;
+    }
+    else if (choice == 'C' || choice == 'c') {
+        calculation_func = Calculate_heat;
     }
     else {
-        calculation_func = Calculate_heat;  // Wybór funkcji C++
+        useGPU = true;
     }
 
-    // Parametry dla wielow¹tkowoœci
-    const int liczba_watkow = 1; // Liczba w¹tków
-    int wiersze_na_watek = liczba_wierszy / liczba_watkow;
+    if (useGPU) {
+        std::cout << "[GPU] Initializing...\n";
+        Init_GPU(map.data(), rows, cols); // wczytanie do GPU raz
 
-    // Utwórz w¹tki
-    std::vector<std::thread> watki;
+        auto start = std::chrono::high_resolution_clock::now();
 
-    // Mierzenie ³¹cznego czasu
-    auto start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < liczba_watkow; ++i) {
-        int start_row = i * wiersze_na_watek;
-        int end_row = (i == liczba_watkow - 1) ? liczba_wierszy : start_row + wiersze_na_watek;
-        watki.emplace_back(thread_worker, std::ref(map), std::ref(map_new), start_row, end_row, calculation_func);
+        Calculate_heat_GPU(rows, cols); // wywo³anie kernela tylko
+
+        auto end = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        std::cout << "[GPU] Kernel execution time: " << duration.count() << " ms\n";
+
+        CopyBack_GPU(map_new.data(), rows, cols); // kopiowanie wyniku do RAM
+        Free_GPU(); // zwalnianie pamiêci GPU
     }
-
-    // Rozpoczynamy obliczenia
-    std::cout << "Rozpoczynamy obliczenia...\n";
+    else
     {
-        std::lock_guard<std::mutex> lk(cv_m);
-        start_work = true;  // Ustaw flagê startu na true
-    }
-    cv.notify_all();  // Powiadom wszystkie w¹tki, ¿eby rozpoczê³y pracê
+        int num_threads = 2;
+        int rows_per_thread = rows / num_threads;
 
-    // Do³¹cz w¹tki
-    for (auto& watek : watki) {
-        watek.join();
+        std::vector<std::thread> threads;
+
+        auto start = std::chrono::high_resolution_clock::now();
+
+        for (int i = 0; i < num_threads; i++)
+        {
+            int start_row = i * rows_per_thread;
+            int end_row = (i == num_threads - 1) ? rows : start_row + rows_per_thread;
+
+            threads.emplace_back(
+                thread_worker,
+                std::ref(map),
+                std::ref(map_new),
+                start_row,
+                end_row,
+                calculation_func
+            );
+        }
+
+        for (auto& t : threads) t.join();
+
+        auto end = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+        std::cout << "[CPU/ASM] Execution time: " << duration.count() << " ms\n";
     }
-    // Mierzenie ³¹cznego czasu po zakoñczeniu obliczeñ
-    auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    std::cout << "Czas wykonania: " << duration.count() << " ms" << std::endl;
-    std::cout << std::endl;
-    showHeatmapSFML(map_new, liczba_kolumn, liczba_wierszy);
-    std::swap(map, map_new);
-    std::cout << map_new[map.size()-1] << std::endl;
-    std::cout << map[map.size()-1] << std::endl;
-    save_binary_map("resultasm.bin", map, liczba_wierszy, liczba_kolumn);
+
+    //showHeatmapSFML(map_new, cols, rows);
+    //std::swap(map, map_new);
+    //save_binary_map("result.bin", map, rows, cols);
+
 
     return 0;
 }

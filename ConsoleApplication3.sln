@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JDLL", "JDLL\JDLL.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CDLL", "CDLL\CDLL.vcxproj", "{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GPUDLL", "GPUDLL\GPUDLL.vcxproj", "{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -45,6 +47,14 @@ Global
 		{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}.Release|x64.Build.0 = Debug|x64
 		{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}.Release|x86.ActiveCfg = Release|Win32
 		{945CA8F3-7890-4DE0-92CD-FDDBD2A863A2}.Release|x86.Build.0 = Release|Win32
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Debug|x64.ActiveCfg = Debug|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Debug|x64.Build.0 = Debug|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Debug|x86.ActiveCfg = Debug|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Debug|x86.Build.0 = Debug|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Release|x64.ActiveCfg = Release|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Release|x64.Build.0 = Release|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Release|x86.ActiveCfg = Release|x64
+		{29A4FADE-4A93-FB90-3F75-2B19CE0379BF}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
