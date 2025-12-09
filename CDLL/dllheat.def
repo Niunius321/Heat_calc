@@ -1,2 +1,0 @@
-LIBRARY CDLL
-EXPORTS Calculate_heat

@@ -1,4 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleApplication3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main.cpp
-C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\ConsoleApplication3\main.cpp(124,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  ConsoleApplication3.vcxproj -> C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\Heat_calculation.exe
