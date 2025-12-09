@@ -1,0 +1,2 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleApplication3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+LINK : fatal error LNK1168: cannot open C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\Heat_calculation.exe for writing

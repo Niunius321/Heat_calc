@@ -1,0 +1,2 @@
+LIBRARY GPU
+EXPORTS Calculate_heat_GPU

@@ -1,0 +1,14 @@
+﻿  Compiling CUDA source file gpu.cu...
+  
+  C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\GPUDLL>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include"  -G   --keep-dir x64\Debug  -maxrregcount=0   --machine 64 --compile -cudart static -Xcompiler "/MDd" -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_WINDLL -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o "C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\GPUDLL\x64\Debug\gpu.cu.obj" "C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\GPUDLL\gpu.cu" 
+C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\GPUDLL\gpu.cu(10): warning #177-D: variable "four" was declared but never referenced
+        const double four = 4.0;
+                     ^
+  
+  Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+  
+  gpu.cu
+  tmpxft_0000606c_00000000-7_gpu.cudafe1.cpp
+     Creating library C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\GPUDLL.lib and object C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\GPUDLL.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  GPUDLL.vcxproj -> C:\Users\sarim\OneDrive\Pulpit\Heat_calc (1)\Heat_calc\Heat_Calculation (2)\Heat_Calculation\Heat_Calculation\x64\Debug\GPUDLL.dll
